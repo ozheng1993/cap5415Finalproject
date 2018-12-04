@@ -1,0 +1,5 @@
+#ignore data
+ou_dataset
+goturn/checkpoints
+maskrcnn/OTB50
+maskrcnn/*.h5
