@@ -10,8 +10,8 @@ NUM_EPOCHS = 500
 BATCH_SIZE = 10
 WIDTH = 227
 HEIGHT = 227
-logfile = "test.log"
-test_txt = "ou_train.txt"
+logfile = "test_16.log"
+test_txt = "ou_test.txt"
 def load_train_test_set(train_file):
     '''
     return train_set or test_set
