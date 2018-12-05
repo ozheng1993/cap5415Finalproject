@@ -4,15 +4,14 @@ import logging
 import time
 import tensorflow as tf
 import os
-import goturn_net
-
+#import goturn_net_VGG16 as goturn_net
+import  goturn_net
 NUM_EPOCHS = 500
 BATCH_SIZE = 50
 WIDTH = 227
 HEIGHT = 227
-train_txt = "train_set.txt"
+train_txt = "ou_train.txt"
 logfile = "train.log"
-
 
 def load_training_set(train_file):
     '''
@@ -134,7 +133,7 @@ if __name__ == "__main__":
                 train_writer.add_summary(summary, i)
     except KeyboardInterrupt:
         print("get keyboard interrupt")
-        if (i - start > 1000):
+        if (i - start > 100):
             model_saver = tf.train.Saver()
             save_ckpt = "checkpoint.ckpt"
             model_saver.save(sess, "checkpoints/" + save_ckpt, global_step=i + 1)

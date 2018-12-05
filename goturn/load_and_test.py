@@ -2,8 +2,8 @@ import logging
 import time
 import tensorflow as tf
 import os,sys
+#import goturn_net_VGG16 as goturn_net
 import goturn_net
-#import goturn_net
 import cv2
 from PIL import Image
 NUM_EPOCHS = 500
@@ -11,7 +11,7 @@ BATCH_SIZE = 10
 WIDTH = 227
 HEIGHT = 227
 logfile = "test.log"
-test_txt = "ou_train.txt"
+test_txt = "ou_test.txt"
 def load_train_test_set(train_file):
     '''
     return train_set or test_set
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     # start the threads
     tf.train.start_queue_runners(sess=sess, coord=coord)
 
-    ckpt_dir = "./orcheckpoints"
+    ckpt_dir = "./checkpoints"
     if not os.path.exists(ckpt_dir):
         os.makedirs(ckpt_dir)
     ckpt = tf.train.get_checkpoint_state(ckpt_dir)
@@ -164,8 +164,7 @@ if __name__ == "__main__":
                 print("load=================================================================")
                 cv2.imshow("output", img)  
                 # Show image
-                cv2.waitKey(0)
-                cv2.destroyAllWindows()
+                cv2.waitKey(1)
 
     except KeyboardInterrupt:
         print("get keyboard interrupt")

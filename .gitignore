@@ -3,3 +3,11 @@ ou_dataset
 goturn/checkpoints
 maskrcnn/OTB50
 maskrcnn/*.h5
+goturn.caffemodel
+goturn.prototxt
+goturn/ou_dataset
+goturn/ou_dataset2
+goturn/ou_dataset3
+goturn/checkpoints_vgg16
+goturn/checkpoints_vgg19
+
